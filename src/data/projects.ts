@@ -157,368 +157,119 @@ export const projects: ProjectData[] = [
         "Future enhancements include integrating analytics dashboards, marketing automation workflows, and CRM integrations for seamless lead management.",
     },
   },
-
   {
-    id: "task-management",
-    title: "Task Management App",
+    id: "realigno",
+    title: "Realigno",
     description:
-      "A Kanban-style task management application with drag-and-drop functionality. Users can create boards, add tasks, set deadlines, and track progress.",
+      "A multi-tenant SaaS dashboard built with React and Tailwind CSS, designed to help organizations manage operations across multiple clients. Focused on scalability, role-based access, and delivering a seamless data-driven user experience.",
     image:
-      "https://placehold.co/600x400/e9ecef/5d63fd?text=Task+Management+App&font=montserrat",
-    tags: ["React", "TypeScript", "Redux", "Firebase"],
-    liveUrl: "#",
+      "https://placehold.co/600x400/e9ecef/5d63fd?text=Realigno&font=montserrat",
+    tags: ["React", "TypeScript", "Tailwind CSS", "Express.js", "Multi-Tenant"],
+    liveUrl: "https://realigno.com/",
     codeUrl: "#",
     caseStudy: {
       overview:
-        "A modern task management application inspired by Kanban methodology, designed to help teams visualize their workflow, limit work in progress, and maximize efficiency. The application features a clean, intuitive interface with real-time updates across all team members.",
+        "Realigno is a multi-tenant SaaS platform that provides dashboards and role-based workflows for client organizations. The platform was designed to simplify management, enhance collaboration, and scale efficiently for multiple customers.",
       challenge:
-        "The client team struggled with project coordination using traditional task management tools. They needed a visual, intuitive system that would provide clear workflow visibility, facilitate better task prioritization, and enable real-time collaboration while being accessible from anywhere.",
+        "The client required a robust dashboard system that could handle multiple organizations (multi-tenancy), provide role-based access, and deliver a clear UI to manage different workflows without compromising performance.",
       solution:
-        "I developed a Kanban-style task management application using React and TypeScript with a Firebase backend for real-time data synchronization. The application implements a drag-and-drop interface for intuitive task management with customizable boards and columns to match any workflow.",
+        "I implemented Figma-to-UI components with React + TypeScript, styled with Tailwind CSS for responsiveness and design consistency. A multi-tenant architecture was set up with role-based workflows, ensuring that each client organization had secure, isolated access.",
       features: [
         {
-          title: "Customizable Boards",
+          title: "Multi-Tenant Architecture",
           description:
-            "Create multiple boards for different projects with customizable columns representing workflow stages.",
+            "Developed a structure that supports multiple organizations under one platform, with isolated data and workflows for each client.",
           image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Boards&font=montserrat",
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=MultiTenant&font=montserrat",
         },
         {
-          title: "Drag-and-Drop Interface",
+          title: "Role-Based Workflows",
           description:
-            "Intuitively move tasks between columns with smooth animations to reflect changing status.",
+            "Implemented dynamic role-based permissions, allowing managers, admins, and users to access features relevant to their responsibilities.",
           image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=DragDrop&font=montserrat",
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=RBAC&font=montserrat",
         },
         {
-          title: "Task Details & Attachments",
+          title: "Figma-to-UI Conversion",
           description:
-            "Rich task cards with descriptions, checklists, deadlines, assignees, labels, and file attachments.",
+            "Translated high-fidelity Figma designs into pixel-perfect, reusable UI components with React and Tailwind CSS.",
           image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Tasks&font=montserrat",
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=FigmaUI&font=montserrat",
         },
         {
-          title: "Real-time Collaboration",
+          title: "Scalability",
           description:
-            "Instant updates across all team members with user presence indicators and activity history.",
+            "Ensured the system could onboard multiple client organizations smoothly, without affecting performance or security.",
           image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Realtime&font=montserrat",
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Scalability&font=montserrat",
         },
       ],
       technologies: [
         {
-          name: "React",
+          name: "React + TypeScript",
           description:
-            "Used for building the component-based UI with efficient DOM updates.",
+            "Built modular and reusable UI components with strict typing for maintainability.",
           icon: "⚛️",
-        },
-        {
-          name: "TypeScript",
-          description:
-            "Ensures type safety and improves code quality and maintainability.",
-          icon: "📘",
-        },
-        {
-          name: "Redux",
-          description:
-            "Manages application state with predictable state transitions.",
-          icon: "🔄",
-        },
-        {
-          name: "Firebase",
-          description:
-            "Provides real-time database, authentication, and cloud functions for backend services.",
-          icon: "🔥",
-        },
-        {
-          name: "React Beautiful DnD",
-          description:
-            "Powers the smooth drag-and-drop functionality with accessibility features.",
-          icon: "✋",
-        },
-      ],
-      process: [
-        {
-          title: "Requirement Analysis",
-          description:
-            "Conducted workshops with the client team to understand their workflow and pain points with existing tools.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Analysis&font=montserrat",
-        },
-        {
-          title: "Prototyping",
-          description:
-            "Created low and high-fidelity prototypes to validate the UI/UX concepts and gather early feedback.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Prototype&font=montserrat",
-        },
-        {
-          title: "Iterative Development",
-          description:
-            "Built the application using Agile methodology with regular demos and feedback sessions.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Development&font=montserrat",
-        },
-        {
-          title: "User Testing & Refinement",
-          description:
-            "Conducted user testing sessions to identify usability issues and implement refinements.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Testing&font=montserrat",
-        },
-      ],
-      outcomes:
-        "After implementing the task management application, the client team reported a 35% reduction in time spent on project coordination and a 40% improvement in on-time task completion. The visual workflow provided better transparency into project status, helping identify bottlenecks early and optimize resource allocation.",
-      testimonial: {
-        quote:
-          "This task management tool has revolutionized how our team works. The visual boards give us instant insight into project status, and the drag-and-drop interface makes updates effortless. We've seen remarkable improvements in our productivity and coordination.",
-        author: "Michael Johnson",
-        role: "Project Manager, Tech Solutions Inc.",
-      },
-      nextSteps:
-        "Future development roadmap includes implementing time tracking features, advanced reporting and analytics, automated workflow triggers, and integration with additional third-party services.",
-    },
-  },
-  {
-    id: "weather-dashboard",
-    title: "Weather Dashboard",
-    description:
-      "A weather application that displays current weather conditions and forecasts for any location. Features include search by city, saved locations, and detailed weather metrics.",
-    image:
-      "https://placehold.co/600x400/e9ecef/5d63fd?text=Weather+Dashboard&font=montserrat",
-    tags: ["React", "CSS", "Weather API", "Geolocation"],
-    liveUrl: "#",
-    codeUrl: "#",
-    caseStudy: {
-      overview:
-        "A modern, intuitive weather dashboard that provides users with current conditions and forecasts for any location worldwide. The application features a clean design focused on data visualization and accessibility, with support for location-based weather and saved favorite locations.",
-      challenge:
-        "The goal was to create a weather application that stands out from typical weather apps by providing a more intuitive user experience, meaningful data visualization, and personalized features while ensuring accurate and up-to-date weather information in a clean, accessible interface.",
-      solution:
-        "I developed a React-based weather dashboard that combines multiple weather data sources for accuracy, implements intuitive data visualization, and offers personalization through saved locations. The application is fully responsive and provides a seamless experience across all devices with graceful error handling for network issues.",
-      features: [
-        {
-          title: "Location-based Weather",
-          description:
-            "Automatic weather detection based on user's current location with permission-based geolocation.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Geolocation&font=montserrat",
-        },
-        {
-          title: "Global Search",
-          description:
-            "Search for weather conditions in any city worldwide with autocomplete suggestions.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Search&font=montserrat",
-        },
-        {
-          title: "Weather Visualization",
-          description:
-            "Intuitive visual representation of weather data with animated icons and interactive charts.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Charts&font=montserrat",
-        },
-        {
-          title: "Saved Locations",
-          description:
-            "Save favorite locations for quick access with persistent storage across sessions.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Favorites&font=montserrat",
-        },
-      ],
-      technologies: [
-        {
-          name: "React",
-          description:
-            "Powers the user interface with efficient component rendering and state management.",
-          icon: "⚛️",
-        },
-        {
-          name: "OpenWeather API",
-          description:
-            "Provides reliable weather data including current conditions and forecasts.",
-          icon: "🌦️",
-        },
-        {
-          name: "Chart.js",
-          description:
-            "Creates interactive and responsive charts for visualizing temperature and precipitation forecasts.",
-          icon: "📊",
-        },
-        {
-          name: "Geolocation API",
-          description:
-            "Enables location-based weather with user permission and fallback options.",
-          icon: "📍",
-        },
-        {
-          name: "LocalStorage API",
-          description:
-            "Saves user preferences and favorite locations for persistent experience.",
-          icon: "💾",
-        },
-      ],
-      process: [
-        {
-          title: "Research & Planning",
-          description:
-            "Conducted user research to identify pain points with existing weather apps and opportunities for improvement.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Research&font=montserrat",
-        },
-        {
-          title: "UI/UX Design",
-          description:
-            "Created a clean, intuitive interface design with accessibility in mind, focusing on clear data presentation.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Design&font=montserrat",
-        },
-        {
-          title: "Weather API Integration",
-          description:
-            "Implemented and tested connections to weather data providers, ensuring reliable data retrieval and error handling.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=API&font=montserrat",
-        },
-        {
-          title: "Testing & Optimization",
-          description:
-            "Conducted cross-browser testing, performance optimization, and responsive design adjustments.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Testing&font=montserrat",
-        },
-      ],
-      outcomes:
-        "The weather dashboard has attracted over 10,000 active users within three months of launch, with an average session duration of 3.5 minutes and a 60% return visitor rate. Users particularly appreciate the intuitive interface, accurate data, and the ability to quickly check weather across multiple saved locations.",
-      testimonial: {
-        quote:
-          "This is hands down the best weather app I've used. The interface is clean and intuitive, the forecasts are accurate, and I love being able to save my frequent locations. The visual charts make it easy to plan my week around the weather.",
-        author: "Lisa Chen",
-        role: "Regular User",
-      },
-      nextSteps:
-        "Future development plans include adding severe weather alerts, air quality information, historical weather data comparison, and an option for users to switch between different weather data providers based on their region for maximum accuracy.",
-    },
-  },
-  {
-    id: "portfolio-website",
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website built with React and Tailwind CSS. Features a responsive design, animated components, and contact form functionality.",
-    image:
-      "https://placehold.co/600x400/e9ecef/5d63fd?text=Portfolio+Website&font=montserrat",
-    tags: ["React", "Tailwind CSS", "Vite", "TypeScript"],
-    liveUrl: "#",
-    codeUrl: "#",
-    caseStudy: {
-      overview:
-        "A modern personal portfolio website showcasing my projects, skills, and professional experience. The site features a responsive design with smooth animations, dark/light mode support, and an intuitive user interface that effectively communicates my capabilities to potential clients and employers.",
-      challenge:
-        "The main challenge was to create a portfolio that stands out in a crowded field, effectively communicates my skills and personality, loads quickly, and provides an exceptional user experience across all devices while being easy to update with new projects and information.",
-      solution:
-        "I developed a custom portfolio using React and Tailwind CSS, focusing on performance, accessibility, and modern design principles. The website features component-based architecture for easy maintenance, optimized assets for fast loading, and thoughtful micro-interactions to enhance user engagement.",
-      features: [
-        {
-          title: "Responsive Design",
-          description:
-            "Fully responsive layout that adapts seamlessly to any screen size from mobile devices to large desktop monitors.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Responsive&font=montserrat",
-        },
-        {
-          title: "Dark/Light Mode",
-          description:
-            "User-toggleable theme preference with automatic detection of system preferences and persistent settings.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Themes&font=montserrat",
-        },
-        {
-          title: "Animated Transitions",
-          description:
-            "Subtle animations and transitions that enhance the user experience without being distracting.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Animations&font=montserrat",
-        },
-        {
-          title: "Contact Form",
-          description:
-            "Functional contact form with validation and email notification integration for easy communication.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Contact&font=montserrat",
-        },
-      ],
-      technologies: [
-        {
-          name: "React",
-          description:
-            "Powers the component-based UI architecture for a dynamic and interactive experience.",
-          icon: "⚛️",
-        },
-        {
-          name: "TypeScript",
-          description:
-            "Ensures type safety and improves code maintainability and developer experience.",
-          icon: "📘",
         },
         {
           name: "Tailwind CSS",
           description:
-            "Enables rapid styling with utility classes and consistent design language.",
+            "Ensured consistent and responsive UI design across desktop and mobile devices.",
           icon: "🎨",
         },
         {
-          name: "Vite",
+          name: "Express.js",
           description:
-            "Provides fast development server and optimized production builds.",
+            "Backend APIs to support multi-tenant workflows and secure data management.",
           icon: "⚡",
         },
         {
-          name: "Framer Motion",
+          name: "RBAC",
           description:
-            "Powers smooth animations and transitions throughout the interface.",
-          icon: "✨",
+            "Dynamic role-based access system for admins, managers, and users.",
+          icon: "🔐",
         },
       ],
       process: [
         {
-          title: "Design & Planning",
+          title: "Requirement Gathering",
           description:
-            "Started with wireframes and mood boards to establish the visual direction and user flow through the portfolio.",
+            "Collaborated with the client to define multi-tenant requirements and role-specific workflows.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Planning&font=montserrat",
+        },
+        {
+          title: "UI/UX Design Conversion",
+          description:
+            "Translated Figma wireframes and high-fidelity designs into a scalable, component-driven UI.",
           image:
             "https://placehold.co/600x400/e9ecef/5d63fd?text=Design&font=montserrat",
         },
         {
-          title: "Component Development",
+          title: "Development",
           description:
-            "Built reusable components for consistent UI elements and easier maintenance.",
+            "Built React + TypeScript frontend and Express.js backend APIs with multi-tenant handling.",
           image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Components&font=montserrat",
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Development&font=montserrat",
         },
         {
-          title: "Content Creation",
+          title: "Testing & Iteration",
           description:
-            "Developed compelling content that effectively communicates skills, project details, and professional background.",
-          image:
-            "https://placehold.co/600x400/e9ecef/5d63fd?text=Content&font=montserrat",
-        },
-        {
-          title: "Optimization & Testing",
-          description:
-            "Conducted performance optimization, accessibility testing, and cross-browser compatibility checks.",
+            "Conducted QA testing to ensure secure tenant isolation and smooth performance across clients.",
           image:
             "https://placehold.co/600x400/e9ecef/5d63fd?text=Testing&font=montserrat",
         },
       ],
       outcomes:
-        "The portfolio has successfully attracted client inquiries and job opportunities, with visitors spending an average of 4.2 minutes on the site. The project showcases both my design sensibilities and technical capabilities in modern web development practices.",
+        "The Realigno platform enabled the client to manage multiple organizations under one dashboard, improving efficiency and scalability. Role-based workflows enhanced collaboration while maintaining data security.",
       testimonial: {
         quote:
-          "I was immediately impressed by the portfolio's clean design and smooth interactions. It clearly communicated the developer's skills and attention to detail, which gave me confidence in reaching out for our project needs.",
-        author: "Alex Rivera",
-        role: "Creative Director, Design Studio",
+          "The dashboard streamlined operations across multiple clients and gave us the flexibility we needed. Great work on the multi-tenant system!",
+        author: "Realigno Team",
+        role: "Client",
       },
       nextSteps:
-        "Future plans include implementing a blog section to share technical insights, adding more interactive project demonstrations, and continually updating with new work samples and skills as they develop.",
+        "Planned enhancements include advanced analytics dashboards, integrations with third-party tools, and further automation of workflows.",
     },
   },
 ];

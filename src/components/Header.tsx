@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { getInitialTheme, toggleTheme } from "../utils/themeManager";
+// import { getInitialTheme } from "../utils/themeManager";
 import { motion } from "framer-motion";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  // const [isDarkMode, setIsDarkMode] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const location = useLocation();
 
-  useEffect(() => {
-    // Initialize the theme
-    const initialTheme = getInitialTheme();
-    setIsDarkMode(initialTheme === "dark");
-  }, []);
+  // useEffect(() => {
+  //   // Initialize the theme
+  //   const initialTheme = getInitialTheme();
+  //   // setIsDarkMode(initialTheme === "dark");
+  // }, []);
 
   useEffect(() => {
     // Close mobile menu on route change
@@ -32,10 +32,10 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleToggleDarkMode = () => {
-    const newTheme = toggleTheme();
-    setIsDarkMode(newTheme === "dark");
-  };
+  // const handleToggleDarkMode = () => {
+  //   const newTheme = toggleTheme();
+  //   // setIsDarkMode(newTheme === "dark");
+  // };
 
   // Function to handle section navigation and scrolling
   const handleSectionClick = (sectionId: string) => {
@@ -67,7 +67,7 @@ const Header = () => {
           className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 transition-colors duration-300"
           aria-label="Home"
         >
-          Portfolio
+          Hemant Verma
         </Link>
 
         <div className="flex items-center space-x-4">

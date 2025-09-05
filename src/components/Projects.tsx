@@ -227,7 +227,7 @@ const Projects = () => {
           transition={{ delay: 0.4, duration: 0.5 }}
         >
           <motion.a
-            href="https://github.com/yourusername"
+            href="https://github.com/Hemant837"
             className="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium"
             target="_blank"
             rel="noopener noreferrer"

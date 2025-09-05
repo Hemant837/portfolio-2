@@ -102,15 +102,13 @@ const About = () => {
                       />
                     </svg>
                     <div>
-                      <p className="font-medium">
-                        Bachelor of Technology
-                      </p>
+                      <p className="font-medium">Bachelor of Technology</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         College of Engineering Roorkee, 2018-2022
                       </p>
                     </div>
                   </li>
-                  {/* <li className="flex items-start">
+                  <li className="flex items-start">
                     <svg
                       className="h-5 w-5 text-indigo-600 mr-2 mt-1"
                       fill="none"
@@ -126,12 +124,12 @@ const About = () => {
                       />
                     </svg>
                     <div>
-                      <p className="font-medium">Web Development Bootcamp</p>
+                      <p className="font-medium">ST. Mark's Academy</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Coding Academy, 2020
+                        Intermediate, 2017-2018
                       </p>
                     </div>
-                  </li> */}
+                  </li>
                 </ul>
               </div>
 
@@ -162,7 +160,7 @@ const About = () => {
                       </p>
                     </div>
                   </li>
-                  {/* <li className="flex items-start">
+                  <li className="flex items-start">
                     <svg
                       className="h-5 w-5 text-indigo-600 mr-2 mt-1"
                       fill="none"
@@ -178,12 +176,14 @@ const About = () => {
                       />
                     </svg>
                     <div>
-                      <p className="font-medium">Frontend Developer</p>
+                      <p className="font-medium">
+                        Freelance Frontend Developer
+                      </p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Web Agency, 2020-2022
+                        Freelance, 2023 - 2024
                       </p>
                     </div>
-                  </li> */}
+                  </li>
                 </ul>
               </div>
             </div>
