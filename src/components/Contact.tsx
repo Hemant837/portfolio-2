@@ -28,21 +28,85 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitError("");
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData);
+    // Option 1: Mailto link (simplest solution)
+    const mailtoLink = `mailto:vermahemant837@gmail.com?subject=${encodeURIComponent(
+      formData.subject
+    )}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+
+    window.location.href = mailtoLink;
+
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+
+    // Reset success message after 5 seconds
+    setTimeout(() => setSubmitSuccess(false), 5000);
+
+    /* 
+    // Option 2: EmailJS integration (uncomment and configure)
+    // First install: npm install @emailjs/browser
+    // Then configure your EmailJS service
+    
+    import emailjs from '@emailjs/browser';
+    
+    emailjs.send(
+      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'vermahemant837@gmail.com'
+      },
+      'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
+    )
+    .then(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
-      });
-
-      // Reset success message after 5 seconds
+      setFormData({ name: "", email: "", subject: "", message: "" });
       setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1500);
+    })
+    .catch((error) => {
+      setIsSubmitting(false);
+      setSubmitError("Failed to send message. Please try again.");
+      console.error('EmailJS error:', error);
+    });
+    */
+
+    /* 
+    // Option 3: Formspree integration (uncomment and configure)
+    // Sign up at formspree.io and get your form endpoint
+    
+    fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        setIsSubmitting(false);
+        setSubmitSuccess(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        throw new Error('Form submission failed');
+      }
+    })
+    .catch(() => {
+      setIsSubmitting(false);
+      setSubmitError("Failed to send message. Please try again.");
+    });
+    */
   };
 
   return (
@@ -90,16 +154,16 @@ const Contact = () => {
 
                 <div className="flex items-start">
                   <svg
-                    className="h-6 w-6 mr-3 mt-1"
+                    className="h-7 w-7 mr-3 mt-1"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    strokeWidth={1.5}
                   >
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                     />
                   </svg>
                   <div>
@@ -206,8 +270,9 @@ const Contact = () => {
               {submitSuccess && (
                 <div className="mb-6 bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
                   <p>
-                    Your message has been sent successfully. I'll get back to
-                    you soon!
+                    Your default email client should open with the message. If
+                    not, please send an email directly to
+                    vermahemant837@gmail.com
                   </p>
                 </div>
               )}
@@ -297,7 +362,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="bg-indigo-600 hover:bg-indigo-700 text-white py-3 px-6 rounded-md font-medium transition duration-300 disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? "Opening Email Client..." : "Send Message"}
                 </button>
               </form>
             </div>

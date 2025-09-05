@@ -3,15 +3,6 @@ import AnimatedSection from "./AnimatedSection";
 import MotionSection from "./MotionSection";
 
 const About = () => {
-  const handleDownloadResume = () => {
-    // This would be replaced with your actual resume file
-    alert(
-      "In a real implementation, this would download your actual resume PDF file."
-    );
-    // Alternatively, you could link directly to the file:
-    // window.open('/path-to-your-resume.pdf', '_blank');
-  };
-
   return (
     <MotionSection
       id="about"
@@ -47,38 +38,30 @@ const About = () => {
               digital experiences.
             </p>
 
-            <motion.div
-              className="mt-6 flex justify-center md:justify-start"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
+            <motion.a
+              href="/hemantResume.pdf"
+              download="Hemant_Verma_Resume.pdf"
+              className="flex items-center w-52 bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg font-medium transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <motion.button
-                onClick={handleDownloadResume}
-                className="flex items-center bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-lg font-medium transition duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                aria-label="Download my resume in PDF format"
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
-                <svg
-                  className="w-5 h-5 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                  />
-                </svg>
-                Download Resume
-              </motion.button>
-            </motion.div>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+              Download Resume
+            </motion.a>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
