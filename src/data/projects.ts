@@ -1,3 +1,6 @@
+import mavlead from "../assets/projects/mavlead.png";
+import cloudSync from "../assets/projects/cloudSync.png";
+
 export interface ProjectData {
   id: string;
   title: string;
@@ -41,8 +44,7 @@ export const projects: ProjectData[] = [
     title: "Mavlead",
     description:
       "A responsive lead generation and marketing platform built with React, Tailwind CSS, and Express.js. Designed to highlight services in Salesforce, CRM, AI, and digital marketing with optimized performance and user-friendly navigation.",
-    image:
-      "https://placehold.co/600x400/e9ecef/5d63fd?text=Mavlead&font=montserrat",
+    image: mavlead,
     tags: ["React", "TypeScript", "Tailwind CSS", "Express.js", "SQL Server"],
     liveUrl: "https://mavlead.com/",
     codeUrl: "#",
@@ -155,6 +157,119 @@ export const projects: ProjectData[] = [
       },
       nextSteps:
         "Future enhancements include integrating analytics dashboards, marketing automation workflows, and CRM integrations for seamless lead management.",
+    },
+  },
+  {
+    id: "cloudsync",
+    title: "Cloud Sync",
+    description:
+      "A modern SaaS landing page built with React and Tailwind CSS, designed to showcase cloud-based file synchronization services. The page focuses on responsive design, clean UI, and optimized performance for high lead conversion.",
+    image: cloudSync,
+    tags: [
+      "React",
+      "Tailwind CSS",
+      "Landing Page",
+      "SaaS",
+      "Responsive Design",
+    ],
+    liveUrl: "https://cloud-sync-six.vercel.app/",
+    codeUrl: "https://github.com/Hemant837/saas-landing-page",
+    caseStudy: {
+      overview:
+        "Cloud Sync is a sleek SaaS landing page tailored for a file synchronization product. It was designed to deliver a strong first impression, convert visitors into leads, and demonstrate the product’s core value proposition with clarity.",
+      challenge:
+        "The goal was to create a visually appealing and conversion-focused landing page that communicates the value of cloud synchronization while being responsive and fast across all devices.",
+      solution:
+        "I designed and developed a clean, responsive landing page using React and Tailwind CSS. The design emphasizes readability, visual hierarchy, and optimized performance, ensuring smooth user experience across devices.",
+      features: [
+        {
+          title: "Responsive Design",
+          description:
+            "Crafted a fully responsive layout that adapts seamlessly to mobile, tablet, and desktop devices.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Responsive&font=montserrat",
+        },
+        {
+          title: "Optimized Performance",
+          description:
+            "Implemented best practices for fast load times and smooth interactions, boosting lead conversion rates.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Performance&font=montserrat",
+        },
+        {
+          title: "Clean UI/UX",
+          description:
+            "Designed a minimal, modern interface that highlights the product’s features and encourages user engagement.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=CleanUI&font=montserrat",
+        },
+        {
+          title: "Scalable Components",
+          description:
+            "Built reusable React components styled with Tailwind, making future updates and expansions seamless.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Scalable&font=montserrat",
+        },
+      ],
+      technologies: [
+        {
+          name: "React",
+          description: "Developed component-based UI for better scalability.",
+          icon: "⚛️",
+        },
+        {
+          name: "Tailwind CSS",
+          description:
+            "Created responsive, utility-first designs with a consistent theme.",
+          icon: "🎨",
+        },
+        {
+          name: "Vercel",
+          description:
+            "Deployed the landing page with optimized performance and fast global delivery.",
+          icon: "▲",
+        },
+      ],
+      process: [
+        {
+          title: "Planning & Wireframing",
+          description:
+            "Outlined page structure and lead conversion strategy through initial wireframes.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Planning&font=montserrat",
+        },
+        {
+          title: "UI/UX Design",
+          description:
+            "Created a clean, minimal design with strong CTAs and optimized layout for conversions.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Design&font=montserrat",
+        },
+        {
+          title: "Development",
+          description:
+            "Implemented React components styled with Tailwind CSS, ensuring responsiveness and performance.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Development&font=montserrat",
+        },
+        {
+          title: "Testing & Launch",
+          description:
+            "Tested across devices and browsers to ensure smooth, bug-free user experience before deployment.",
+          image:
+            "https://placehold.co/600x400/e9ecef/5d63fd?text=Testing&font=montserrat",
+        },
+      ],
+      outcomes:
+        "The Cloud Sync landing page successfully highlights the product’s benefits, improves brand credibility, and enhances lead generation through optimized UI/UX and performance.",
+      testimonial: {
+        quote:
+          "The landing page was exactly what we needed — fast, clean, and built for conversions. It effectively communicates our product value.",
+        author: "Cloud Sync Team",
+        role: "Client",
+      },
+      nextSteps:
+        "Planned enhancements include adding more UI sections, making additional links functional, and expanding the design with new pages to showcase advanced UI development skills.",
     },
   },
   {

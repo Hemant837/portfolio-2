@@ -1,4 +1,6 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import MotionSection from "./MotionSection";
 
 const Contact = () => {
@@ -28,85 +30,31 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitError("");
 
-    // Option 1: Mailto link (simplest solution)
-    const mailtoLink = `mailto:vermahemant837@gmail.com?subject=${encodeURIComponent(
-      formData.subject
-    )}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-
-    window.location.href = mailtoLink;
-
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: "",
-    });
-
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000);
-
-    /* 
-    // Option 2: EmailJS integration (uncomment and configure)
-    // First install: npm install @emailjs/browser
-    // Then configure your EmailJS service
-    
-    import emailjs from '@emailjs/browser';
-    
-    emailjs.send(
-      'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-      {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_email: 'vermahemant837@gmail.com'
-      },
-      'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-    )
-    .then(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    })
-    .catch((error) => {
-      setIsSubmitting(false);
-      setSubmitError("Failed to send message. Please try again.");
-      console.error('EmailJS error:', error);
-    });
-    */
-
-    /* 
-    // Option 3: Formspree integration (uncomment and configure)
-    // Sign up at formspree.io and get your form endpoint
-    
-    fetch('https://formspree.io/f/YOUR_FORM_ID', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
-    })
-    .then(response => {
-      if (response.ok) {
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "vermahemant837@gmail.com",
+          time: new Date().toLocaleString(),
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
         setIsSubmitting(false);
         setSubmitSuccess(true);
         setFormData({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setSubmitSuccess(false), 5000);
-      } else {
-        throw new Error('Form submission failed');
-      }
-    })
-    .catch(() => {
-      setIsSubmitting(false);
-      setSubmitError("Failed to send message. Please try again.");
-    });
-    */
+      })
+      .catch((error) => {
+        setIsSubmitting(false);
+        setSubmitError("Failed to send message. Please try again.");
+        console.error("EmailJS error:", error);
+      });
   };
 
   return (
@@ -269,11 +217,7 @@ const Contact = () => {
 
               {submitSuccess && (
                 <div className="mb-6 bg-green-100 border-l-4 border-green-500 text-green-700 p-4">
-                  <p>
-                    Your default email client should open with the message. If
-                    not, please send an email directly to
-                    vermahemant837@gmail.com
-                  </p>
+                  <p>Message sent successfully! I'll get back to you soon.</p>
                 </div>
               )}
 
