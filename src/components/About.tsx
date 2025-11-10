@@ -137,7 +137,7 @@ const About = () => {
                       />
                     </svg>
                     <div>
-                      <p className="font-medium">Frontend Developer</p>
+                      <p className="font-medium">Software Developer</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         ST Global Tech, 2023-Present
                       </p>
