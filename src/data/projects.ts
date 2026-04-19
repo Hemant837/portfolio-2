@@ -1,5 +1,6 @@
 import mavlead from "../assets/projects/mavlead.png";
 import cloudSync from "../assets/projects/cloudSync.png";
+import documind from "../assets/projects/documind.png";
 
 export interface ProjectData {
   id: string;
@@ -39,6 +40,128 @@ export interface ProjectData {
 }
 
 export const projects: ProjectData[] = [
+  {
+    id: "documind",
+    title: "DocuMind",
+    description:
+      "A full-stack AI-powered document chat application that allows users to upload PDFs and interact with them through a conversational interface with source-backed responses.",
+
+    image: documind, // your image reference
+
+    tags: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "LangChain",
+      "ChromaDB",
+      "PostgreSQL",
+      "RAG",
+    ],
+
+    liveUrl: "https://documind-delta.vercel.app",
+    codeUrl: "https://github.com/Hemant837/documind",
+
+    caseStudy: {
+      overview:
+        "DocuMind is a Retrieval-Augmented Generation (RAG) based application designed to help users extract insights from documents. Users can upload PDFs and query them via a chat interface, receiving context-aware answers with inline source citations.",
+
+      challenge:
+        "The main challenge was to build an accurate and scalable system that could process large PDF documents, retrieve relevant context efficiently, and generate grounded responses while maintaining performance and multi-user data isolation.",
+
+      solution:
+        "I implemented a complete RAG pipeline using LangChain for orchestration, ChromaDB for vector storage, and FastAPI for backend services. The system processes PDFs through chunking and embeddings, retrieves relevant context using semantic search, and generates responses using an LLM with real-time streaming.",
+
+      features: [
+        {
+          title: "PDF Upload & Processing",
+          description:
+            "Users can upload PDF documents which are parsed, chunked, and converted into embeddings for semantic search.",
+        },
+        {
+          title: "AI Chat Interface",
+          description:
+            "Interactive chat interface that allows users to query documents and receive context-aware responses with inline citations.",
+        },
+        {
+          title: "Real-time Streaming",
+          description:
+            "Implemented token-by-token streaming of LLM responses using Server-Sent Events (SSE) for improved user experience.",
+        },
+        {
+          title: "Multi-tenant Architecture",
+          description:
+            "Ensured data isolation by scoping all database queries and vector searches using user IDs.",
+        },
+        {
+          title: "Authentication System",
+          description:
+            "Integrated JWT-based authentication with email/password and Google OAuth for secure access.",
+        },
+      ],
+
+      technologies: [
+        {
+          name: "React + TypeScript",
+          description:
+            "Frontend for building a responsive and interactive chat interface.",
+          icon: "⚛️",
+        },
+        {
+          name: "FastAPI",
+          description:
+            "Async backend framework for handling APIs, streaming, and request processing.",
+          icon: "⚡",
+        },
+        {
+          name: "LangChain",
+          description:
+            "Used for orchestrating the RAG pipeline and managing LLM workflows.",
+          icon: "🔗",
+        },
+        {
+          name: "ChromaDB",
+          description:
+            "Vector database for storing embeddings and performing semantic search.",
+          icon: "🧠",
+        },
+        {
+          name: "PostgreSQL",
+          description:
+            "Used for storing user data, chat history, and metadata.",
+          icon: "🗄️",
+        },
+      ],
+
+      process: [
+        {
+          title: "Document Ingestion",
+          description:
+            "Parsed PDFs, applied semantic chunking, and generated embeddings for efficient retrieval.",
+        },
+        {
+          title: "Retrieval Pipeline",
+          description:
+            "Implemented vector similarity search to fetch relevant document chunks based on user queries.",
+        },
+        {
+          title: "Response Generation",
+          description:
+            "Used LLMs to generate context-aware responses grounded in retrieved data.",
+        },
+        {
+          title: "Streaming & UI",
+          description:
+            "Integrated SSE for real-time streaming and built a responsive chat UI in React.",
+        },
+      ],
+
+      outcomes:
+        "Successfully built a production-ready AI application capable of handling multi-user document queries with real-time responses, improving usability and enabling efficient knowledge extraction from unstructured data.",
+
+      nextSteps:
+        "Planned improvements include hybrid search (keyword + vector), LangGraph-based decision routing, and evaluation pipelines to measure response accuracy.",
+    },
+  },
   {
     id: "mavlead",
     title: "Mavlead",

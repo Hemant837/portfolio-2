@@ -22,22 +22,29 @@ const About = () => {
         <AnimatedSection className="max-w-4xl mx-auto">
           <div className="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md p-6 md:p-8">
             <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              I’m a Frontend Developer with 1.5+ years of professional
-              experience working on SaaS products, dashboards, and automation
-              platforms. I enjoy solving real-world problems with clean,
-              efficient, and maintainable code.
+              I’m a Software Developer with 2+ years of experience building
+              scalable SaaS applications, dashboards, and automation platforms.
+              I work across the full stack using React, TypeScript, and backend
+              APIs, and have built systems like Applicant Tracking Systems,
+              invoicing tools, and internal platforms used in real-world
+              workflows.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              My core skills include React.js, TypeScript, Tailwind CSS, Redux
-              Toolkit, and Express.js, and I’ve built applications ranging from
-              learning management systems to invoicing automation tools.
+              I work across the full stack using React, TypeScript, and backend
+              APIs, and have built systems like Applicant Tracking Systems,
+              invoicing tools, and internal platforms used in real-world
+              workflows.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              Beyond coding, I value teamwork, collaboration, and scalability,
-              and I enjoy translating business requirements into seamless
-              digital experiences.
+              Recently, I’ve been exploring Generative AI and building hands-on
+              projects, including a RAG-based document chat application using
+              Python, LangChain, Chroma, and FastAPI.
             </p>
-
+            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+              I enjoy solving real-world problems with clean, maintainable code
+              and translating business requirements into reliable, user-friendly
+              systems.
+            </p>
             <motion.a
               href="/hemantResume.pdf"
               download="Hemant_Verma_Resume.pdf"
@@ -62,7 +69,6 @@ const About = () => {
               </svg>
               Download Resume
             </motion.a>
-
             <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-3">

@@ -5,16 +5,6 @@ import MotionSection from "./MotionSection";
 const Skills = () => {
   const skills = [
     {
-      name: "HTML & CSS",
-      icon: "💻",
-      level: 85,
-    },
-    {
-      name: "JavaScript",
-      icon: "🔧",
-      level: 80,
-    },
-    {
       name: "React",
       icon: "⚛️",
       level: 80,
@@ -22,41 +12,52 @@ const Skills = () => {
     {
       name: "TypeScript",
       icon: "📘",
-      level: 70,
+      level: 75,
     },
     {
-      name: "Redux Toolkit",
-      icon: "🗂️",
-      level: 65,
+      name: "JavaScript (ES6+)",
+      icon: "🟨",
+      level: 80,
     },
     {
       name: "Tailwind CSS",
       icon: "🎨",
-      level: 80,
+      level: 75,
     },
     {
-      name: "Ant Design / Shadcn UI",
-      icon: "🖌️",
+      name: "Redux Toolkit / TanStack Query",
+      icon: "🗂️",
+      level: 75,
+    },
+    {
+      name: "Express.js / REST APIs",
+      icon: "⚡",
       level: 70,
     },
     {
-      name: "Express.js",
-      icon: "⚡",
+      name: "SQL Server / Databases",
+      icon: "🗄️",
+      level: 65,
+    },
+    { name: "Python", icon: "🐍", level: 65 },
+    {
+      name: "GenAI (RAG, LangChain, Chroma)",
+      icon: "🧠",
       level: 65,
     },
     {
-      name: "SQL Server",
-      icon: "🗄️",
-      level: 55,
-    },
-    {
-      name: "Git & GitHub",
-      icon: "📊",
-      level: 75,
+      name: "FastAPI",
+      icon: "🚀",
+      level: 65,
     },
     {
       name: "API Integration",
       icon: "🔗",
+      level: 80,
+    },
+    {
+      name: "Git & GitHub",
+      icon: "📊",
       level: 75,
     },
   ];
@@ -128,21 +129,23 @@ const Skills = () => {
               role="list"
               aria-label="Additional skills"
             >
-              {["MongoDB", "Firebase", "Docker"].map((item, index) => (
-                <motion.span
-                  key={index}
-                  className="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100 px-4 py-2 rounded-full text-sm font-medium"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: index * 0.05 }}
-                  whileHover={{ y: -5 }}
-                  role="listitem"
-                  aria-label={item}
-                >
-                  {item}
-                </motion.span>
-              ))}
+              {["MongoDB", "Firebase", "PostgreSQL", "Neon"].map(
+                (item, index) => (
+                  <motion.span
+                    key={index}
+                    className="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100 px-4 py-2 rounded-full text-sm font-medium"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: index * 0.05 }}
+                    whileHover={{ y: -5 }}
+                    role="listitem"
+                    aria-label={item}
+                  >
+                    {item}
+                  </motion.span>
+                ),
+              )}
             </div>
           </motion.div>
         </div>
