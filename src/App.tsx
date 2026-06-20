@@ -8,8 +8,6 @@ import HomePage from "./pages/HomePage";
 import ProjectDetail from "./components/ProjectDetail";
 import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate";
 
-import "./App.css";
-
 function App() {
   return (
     <Router>

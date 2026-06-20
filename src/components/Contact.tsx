@@ -179,7 +179,7 @@ const Contact = () => {
                     </svg>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/hemant-verma-73a82a193"
+                    href="https://www.linkedin.com/in/hemant-verma-dev"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-indigo-200 transition duration-300"

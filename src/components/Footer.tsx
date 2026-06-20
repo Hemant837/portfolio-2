@@ -1,44 +1,39 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const navLinks = [
+    { label: "About", to: "/#about" },
+    { label: "Skills", to: "/#skills" },
+    { label: "Projects", to: "/#projects" },
+    { label: "Contact", to: "/#contact" },
+  ];
 
   return (
     <footer className="bg-gray-800 text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <a href="#" className="text-2xl font-bold text-white">
+            <Link to="/" className="text-2xl font-bold text-white">
               Hemant Verma
-            </a>
+            </Link>
             <p className="mt-2 text-gray-400 max-w-md">
-              Building beautiful web experiences with modern technologies.
+              Building scalable web and AI-powered applications with modern
+              technologies.
             </p>
           </div>
 
           <div className="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
-            <a
-              href="#about"
-              className="text-gray-300 hover:text-white transition duration-300"
-            >
-              About
-            </a>
-            <a
-              href="#skills"
-              className="text-gray-300 hover:text-white transition duration-300"
-            >
-              Skills
-            </a>
-            <a
-              href="#projects"
-              className="text-gray-300 hover:text-white transition duration-300"
-            >
-              Projects
-            </a>
-            <a
-              href="#contact"
-              className="text-gray-300 hover:text-white transition duration-300"
-            >
-              Contact
-            </a>
+            {navLinks.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="text-gray-300 hover:text-white transition duration-300"
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
 
@@ -71,7 +66,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/hemant-verma-73a82a193"
+              href="https://www.linkedin.com/in/hemant-verma-dev"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-white transition duration-300"

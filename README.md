@@ -1,34 +1,53 @@
-# React + TypeScript + Vite
+# Hemant Verma — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio of Hemant Verma, a Software Developer. Built as a single-page
+app with project case studies.
 
-Currently, two official plugins are available:
+🔗 **Live:** https://hemant-portfolio-liart.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript**
+- **Vite 6** (build/dev)
+- **Tailwind CSS v4** (`@tailwindcss/vite`)
+- **React Router 7** (home + per-project case-study routes)
+- **Framer Motion** (animations)
+- **EmailJS** (contact form)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
+npm run dev      # start dev server
+npm run build    # type-check + production build
+npm run preview  # preview the production build
+npm run lint     # run ESLint
 ```
+
+## Environment Variables
+
+The contact form uses EmailJS. Create a `.env` file in the project root:
+
+```
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+```
+
+## Project Structure
+
+```
+src/
+  components/   UI + section components (Hero, About, Skills, Projects, Contact, ...)
+  pages/        Route-level components (HomePage)
+  data/         projects.ts — all project content and case studies
+  assets/       images (project screenshots)
+public/         static assets, resume PDF, sitemap, robots
+```
+
+## Adding a Project
+
+Add an entry to [`src/data/projects.ts`](src/data/projects.ts). Each project
+supports a hero `image`, an optional `screenshots` gallery (`{ src, caption }`),
+`tags`, `liveUrl`/`codeUrl` (use `"#"` to hide the button for private work), and
+a `caseStudy` block. Import screenshots from `src/assets/projects/`.
