@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none" role="img" aria-label="Applicant Tracking System">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.10"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Decorative shapes -->
+  <circle cx="730" cy="60" r="130" fill="#ffffff" opacity="0.07"/>
+  <circle cx="70" cy="450" r="160" fill="#ffffff" opacity="0.05"/>
+
+  <g transform="translate(400, 250)">
+    <!-- Clipboard icon -->
+    <g transform="translate(-30, -158)">
+      <rect x="0" y="7" width="60" height="74" rx="9" fill="#ffffff"/>
+      <rect x="19" y="0" width="22" height="16" rx="5" fill="#c7d2fe"/>
+      <rect x="13" y="28" width="34" height="5" rx="2.5" fill="#7c3aed"/>
+      <rect x="13" y="40" width="34" height="5" rx="2.5" fill="#a5b4fc"/>
+      <path d="M14 56 l7 7 l14 -15" stroke="#4f46e5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="-34" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="52" font-weight="800" fill="#ffffff">Applicant Tracking System</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="6" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="500" fill="#eef2ff">Full-stack recruitment platform</text>
+
+    <!-- Candidate list mock -->
+    <g transform="translate(-170, 40)">
+      <rect x="0" y="0" width="340" height="46" rx="11" fill="url(#card)"/>
+      <circle cx="28" cy="23" r="12" fill="#ffffff" opacity="0.9"/>
+      <rect x="52" y="14" width="130" height="7" rx="3.5" fill="#ffffff" opacity="0.8"/>
+      <rect x="52" y="27" width="86" height="6" rx="3" fill="#ffffff" opacity="0.5"/>
+      <rect x="276" y="16" width="48" height="16" rx="8" fill="#34d399"/>
+
+      <rect x="0" y="58" width="340" height="46" rx="11" fill="url(#card)"/>
+      <circle cx="28" cy="81" r="12" fill="#ffffff" opacity="0.9"/>
+      <rect x="52" y="72" width="160" height="7" rx="3.5" fill="#ffffff" opacity="0.8"/>
+      <rect x="52" y="85" width="104" height="6" rx="3" fill="#ffffff" opacity="0.5"/>
+      <rect x="276" y="74" width="48" height="16" rx="8" fill="#fbbf24"/>
+    </g>
+
+    <!-- Stat line -->
+    <text x="0" y="196" text-anchor="middle" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="600" fill="#c7d2fe">8000+ candidates  &#183;  30+ clients  &#183;  RBAC  &#183;  Azure Blob</text>
+  </g>
+</svg>

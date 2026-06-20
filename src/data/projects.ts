@@ -52,8 +52,7 @@ export const projects: ProjectData[] = [
     title: "Applicant Tracking System",
     description:
       "A full-stack Applicant Tracking System managing 8000+ candidate profiles across 30+ clients, used daily by internal recruiters. Features RBAC, bulk resume uploads, a talent pool, and automated invoicing. (Internal product — no public demo.)",
-    image:
-      "https://placehold.co/600x400/e9ecef/5d63fd?text=ATS&font=montserrat",
+    image: "/ats.svg",
     tags: [
       "React",
       "TypeScript",

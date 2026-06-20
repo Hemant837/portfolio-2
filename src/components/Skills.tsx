@@ -1,82 +1,138 @@
 import { motion } from "framer-motion";
-import AnimatedSkillBar from "./AnimatedSkillBar";
+import { IconType } from "react-icons";
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiRedux,
+  SiNodedotjs,
+  SiExpress,
+  SiPython,
+  SiFastapi,
+  SiPostgresql,
+  SiOpenai,
+  SiLangchain,
+  SiGithub,
+  SiVercel,
+} from "react-icons/si";
+import {
+  TbBrowser,
+  TbServer,
+  TbBrain,
+  TbTools,
+  TbApi,
+  TbDatabase,
+  TbVector,
+  TbBinaryTree,
+  TbSearch,
+  TbCloud,
+} from "react-icons/tb";
 import MotionSection from "./MotionSection";
 
-const Skills = () => {
-  const skills = [
-    {
-      name: "React",
-      icon: "⚛️",
-      level: 80,
-    },
-    {
-      name: "Next.js",
-      icon: "▲",
-      level: 75,
-    },
-    {
-      name: "TypeScript",
-      icon: "📘",
-      level: 75,
-    },
-    {
-      name: "JavaScript (ES6+)",
-      icon: "🟨",
-      level: 80,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: "🎨",
-      level: 75,
-    },
-    {
-      name: "Redux Toolkit / TanStack Query",
-      icon: "🗂️",
-      level: 75,
-    },
-    {
-      name: "Express.js / REST APIs",
-      icon: "⚡",
-      level: 70,
-    },
-    {
-      name: "SQL Server / Databases",
-      icon: "🗄️",
-      level: 65,
-    },
-    { name: "Python", icon: "🐍", level: 65 },
-    {
-      name: "GenAI (RAG, LangChain, LangGraph)",
-      icon: "🧠",
-      level: 65,
-    },
-    {
-      name: "FastAPI",
-      icon: "🚀",
-      level: 65,
-    },
-    {
-      name: "API Integration",
-      icon: "🔗",
-      level: 80,
-    },
-    {
-      name: "Git & GitHub",
-      icon: "📊",
-      level: 75,
-    },
-  ];
+interface Skill {
+  name: string;
+  Icon: IconType;
+  color?: string; // brand color; omitted icons render in a neutral gray
+}
 
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
+interface SkillGroup {
+  category: string;
+  CatIcon: IconType;
+  accent: {
+    border: string;
+    chipBg: string;
+    chipText: string;
   };
+  skills: Skill[];
+}
 
+const skillGroups: SkillGroup[] = [
+  {
+    category: "Frontend",
+    CatIcon: TbBrowser,
+    accent: {
+      border: "border-t-indigo-500",
+      chipBg: "bg-indigo-100 dark:bg-indigo-900/40",
+      chipText: "text-indigo-600 dark:text-indigo-400",
+    },
+    skills: [
+      { name: "React", Icon: SiReact, color: "#61DAFB" },
+      { name: "Next.js", Icon: SiNextdotjs },
+      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
+      { name: "JavaScript (ES6+)", Icon: SiJavascript, color: "#F7DF1E" },
+      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
+      { name: "Redux Toolkit", Icon: SiRedux, color: "#764ABC" },
+    ],
+  },
+  {
+    category: "Backend",
+    CatIcon: TbServer,
+    accent: {
+      border: "border-t-emerald-500",
+      chipBg: "bg-emerald-100 dark:bg-emerald-900/40",
+      chipText: "text-emerald-600 dark:text-emerald-400",
+    },
+    skills: [
+      { name: "Node.js", Icon: SiNodedotjs, color: "#5FA04E" },
+      { name: "Express.js", Icon: SiExpress },
+      { name: "REST APIs", Icon: TbApi },
+      { name: "Python", Icon: SiPython, color: "#3776AB" },
+      { name: "FastAPI", Icon: SiFastapi, color: "#009688" },
+      { name: "SQL Server", Icon: TbDatabase },
+      { name: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1" },
+      { name: "Neon", Icon: TbDatabase },
+    ],
+  },
+  {
+    category: "AI / GenAI",
+    CatIcon: TbBrain,
+    accent: {
+      border: "border-t-violet-500",
+      chipBg: "bg-violet-100 dark:bg-violet-900/40",
+      chipText: "text-violet-600 dark:text-violet-400",
+    },
+    skills: [
+      { name: "LangChain", Icon: SiLangchain },
+      { name: "LangGraph", Icon: TbBinaryTree },
+      { name: "OpenAI", Icon: SiOpenai, color: "#10A37F" },
+      { name: "RAG", Icon: TbSearch },
+      { name: "PG Vector", Icon: TbVector },
+    ],
+  },
+  {
+    category: "Tools & Cloud",
+    CatIcon: TbTools,
+    accent: {
+      border: "border-t-amber-500",
+      chipBg: "bg-amber-100 dark:bg-amber-900/40",
+      chipText: "text-amber-600 dark:text-amber-400",
+    },
+    skills: [
+      { name: "Git & GitHub", Icon: SiGithub },
+      { name: "Azure Blob Storage", Icon: TbCloud },
+      { name: "Vercel", Icon: SiVercel },
+    ],
+  },
+];
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, scale: 0.8 },
+  show: { opacity: 1, scale: 1 },
+};
+
+const Skills = () => {
   return (
     <MotionSection
       id="skills"
@@ -99,66 +155,58 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            role="list"
-            aria-label="Primary skills with proficiency levels"
-          >
-            {skills.map((skill, index) => (
-              <AnimatedSkillBar
-                key={index}
-                name={skill.name}
-                icon={skill.icon}
-                level={skill.level}
-              />
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="mt-16 text-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">
-              Other Skills
-            </h3>
-            <div
-              className="flex flex-wrap justify-center gap-3"
-              role="list"
-              aria-label="Additional skills"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {skillGroups.map((group) => (
+            <motion.div
+              key={group.category}
+              className={`bg-white dark:bg-gray-800 rounded-xl shadow-md border-t-4 ${group.accent.border} p-6 transition-colors duration-300`}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
             >
-              {[
-                "OpenAI",
-                "LangGraph",
-                "Azure Blob Storage",
-                "PostgreSQL",
-                "Neon",
-              ].map(
-                (item, index) => (
+              <div className="flex items-center mb-5">
+                <span
+                  className={`inline-flex items-center justify-center w-9 h-9 rounded-lg mr-3 ${group.accent.chipBg} ${group.accent.chipText}`}
+                  aria-hidden="true"
+                >
+                  <group.CatIcon className="text-xl" />
+                </span>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                  {group.category}
+                </h3>
+              </div>
+
+              <motion.div
+                className="flex flex-wrap gap-2.5"
+                variants={container}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                role="list"
+                aria-label={`${group.category} skills`}
+              >
+                {group.skills.map((skill) => (
                   <motion.span
-                    key={index}
-                    className="bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100 px-4 py-2 rounded-full text-sm font-medium"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    whileHover={{ y: -5 }}
+                    key={skill.name}
+                    className="inline-flex items-center gap-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-3.5 py-2 rounded-full text-sm font-medium"
+                    variants={item}
+                    whileHover={{ y: -4 }}
                     role="listitem"
-                    aria-label={item}
                   >
-                    {item}
+                    <skill.Icon
+                      className={`text-lg ${
+                        skill.color ? "" : "text-gray-500 dark:text-gray-400"
+                      }`}
+                      style={skill.color ? { color: skill.color } : undefined}
+                      aria-hidden="true"
+                    />
+                    {skill.name}
                   </motion.span>
-                ),
-              )}
-            </div>
-          </motion.div>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </MotionSection>
