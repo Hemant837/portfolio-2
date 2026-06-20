@@ -30,7 +30,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            Frontend Developer
+            Software Developer
           </motion.h2>
 
           <motion.p
@@ -39,8 +39,8 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9, duration: 0.5 }}
           >
-            Frontend Developer building scalable, responsive, and user-friendly
-            applications with React, TypeScript, and Tailwind CSS.
+            Software Developer building scalable SaaS applications, internal
+            tools, and AI-powered platforms with React, TypeScript, and Python.
           </motion.p>
 
           <motion.div
@@ -84,7 +84,7 @@ const Hero = () => {
           >
             <img
               src="/profile.jpg"
-              alt="Hemant Verma - Frontend Developer"
+              alt="Hemant Verma - Software Developer"
               className="rounded-full w-full h-full object-cover"
             />
           </motion.div>

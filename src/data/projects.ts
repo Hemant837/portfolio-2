@@ -1,12 +1,19 @@
 import mavlead from "../assets/projects/mavlead.png";
 import cloudSync from "../assets/projects/cloudSync.png";
-import documind from "../assets/projects/documind.png";
+import documindOutside from "../assets/projects/documind-outside.png";
+import documindInside from "../assets/projects/documind-inside.png";
+import provenanceOutside from "../assets/projects/provenance-outside.png";
+import provenanceInside from "../assets/projects/provenance-inside.png";
 
 export interface ProjectData {
   id: string;
   title: string;
   description: string;
   image: string;
+  screenshots?: {
+    src: string;
+    caption?: string;
+  }[];
   tags: string[];
   liveUrl: string;
   codeUrl: string;
@@ -41,19 +48,129 @@ export interface ProjectData {
 
 export const projects: ProjectData[] = [
   {
+    id: "ats",
+    title: "Applicant Tracking System",
+    description:
+      "A full-stack Applicant Tracking System managing 8000+ candidate profiles across 30+ clients, used daily by internal recruiters. Features RBAC, bulk resume uploads, a talent pool, and automated invoicing. (Internal product — no public demo.)",
+    image:
+      "https://placehold.co/600x400/e9ecef/5d63fd?text=ATS&font=montserrat",
+    tags: [
+      "React",
+      "TypeScript",
+      "Express.js",
+      "SQL Server",
+      "Azure Blob Storage",
+      "RBAC",
+    ],
+    liveUrl: "#",
+    codeUrl: "#",
+    caseStudy: {
+      overview:
+        "An internal Applicant Tracking System built and maintained for ST Global Tech, managing 8000+ candidate profiles across 30+ clients and used daily by 10+ internal recruiters. The platform centralizes candidate sourcing, screening, billing, and reporting in a single full-stack application.",
+      challenge:
+        "Recruiters relied on scattered spreadsheets and manual processes to manage thousands of candidates across many clients, with no access controls, no scalable resume storage, and time-consuming manual invoicing. The system needed to enforce client-specific data visibility, handle large-scale resume ingestion, and automate billing reliably.",
+      solution:
+        "I built a full-stack application with a React + TypeScript frontend and an Express + SQL Server backend. I implemented Role-Based Access Control with client-specific data filters, a bulk resume upload pipeline integrated with Azure Blob Storage, a cross-client talent pool, and an automated invoicing and reporting module to replace manual Excel/Word workflows.",
+      features: [
+        {
+          title: "Role-Based Access Control",
+          description:
+            "Implemented RBAC with client-specific data filters to enforce compliance and restrict data visibility across recruiter accounts.",
+        },
+        {
+          title: "Bulk Resume Upload",
+          description:
+            "Built a bulk upload feature supporting up to 500 resumes at a time, integrated with Azure Blob Storage for scalable file handling.",
+        },
+        {
+          title: "Talent Pool Module",
+          description:
+            "Architected a talent pool for searching and managing candidates across all clients from a single interface.",
+        },
+        {
+          title: "Automated Invoicing",
+          description:
+            "Built a full-stack invoicing and reporting system that replaced manual Excel/Word processes, reducing invoice generation time by an estimated 70% per billing cycle.",
+        },
+      ],
+      technologies: [
+        {
+          name: "React + TypeScript",
+          description:
+            "Frontend for dashboards, candidate management, and reporting views.",
+          icon: "⚛️",
+        },
+        {
+          name: "Express.js",
+          description:
+            "Backend APIs handling candidate data, access control, and billing logic.",
+          icon: "⚡",
+        },
+        {
+          name: "SQL Server",
+          description:
+            "Relational database storing candidate profiles, client data, and invoices.",
+          icon: "🗄️",
+        },
+        {
+          name: "Azure Blob Storage",
+          description:
+            "Scalable object storage for bulk resume uploads and document management.",
+          icon: "☁️",
+        },
+        {
+          name: "RBAC",
+          description:
+            "Role-based access with client-specific data filters for compliance.",
+          icon: "🔐",
+        },
+      ],
+      process: [
+        {
+          title: "Requirement Analysis",
+          description:
+            "Worked with recruiters to map existing manual workflows and identify access, storage, and billing pain points.",
+        },
+        {
+          title: "Access Control & Data Model",
+          description:
+            "Designed the SQL Server schema and implemented RBAC with client-specific filters for secure, compliant data visibility.",
+        },
+        {
+          title: "Bulk Ingestion & Talent Pool",
+          description:
+            "Built the Azure Blob-backed bulk upload pipeline and a searchable cross-client talent pool.",
+        },
+        {
+          title: "Billing Automation",
+          description:
+            "Developed the invoicing and reporting module to automate billing and replace manual document generation.",
+        },
+      ],
+      outcomes:
+        "The ATS became the daily driver for 10+ recruiters, managing 8000+ candidates across 30+ clients. Automated invoicing reduced invoice generation time by an estimated 70% per billing cycle, while RBAC and client-specific filters enforced compliance across accounts.",
+      nextSteps:
+        "Planned improvements include analytics dashboards for recruiter performance, candidate de-duplication, and resume parsing to auto-populate candidate fields.",
+    },
+  },
+  {
     id: "documind",
     title: "DocuMind",
     description:
       "A full-stack AI-powered document chat application that allows users to upload PDFs and interact with them through a conversational interface with source-backed responses.",
 
-    image: documind, // your image reference
+    image: documindOutside,
+    screenshots: [
+      { src: documindOutside, caption: "Landing page" },
+      { src: documindInside, caption: "In-app document chat" },
+    ],
 
     tags: [
       "React",
       "TypeScript",
       "FastAPI",
       "LangChain",
-      "ChromaDB",
+      "PG Vector",
       "PostgreSQL",
       "RAG",
     ],
@@ -69,7 +186,7 @@ export const projects: ProjectData[] = [
         "The main challenge was to build an accurate and scalable system that could process large PDF documents, retrieve relevant context efficiently, and generate grounded responses while maintaining performance and multi-user data isolation.",
 
       solution:
-        "I implemented a complete RAG pipeline using LangChain for orchestration, ChromaDB for vector storage, and FastAPI for backend services. The system processes PDFs through chunking and embeddings, retrieves relevant context using semantic search, and generates responses using an LLM with real-time streaming.",
+        "I implemented a complete RAG pipeline using LangChain for orchestration, PG Vector for vector storage, and FastAPI for backend services. The system processes PDFs through chunking and embeddings, retrieves relevant context using semantic search, and generates responses using an LLM with real-time streaming.",
 
       features: [
         {
@@ -119,9 +236,9 @@ export const projects: ProjectData[] = [
           icon: "🔗",
         },
         {
-          name: "ChromaDB",
+          name: "PG Vector",
           description:
-            "Vector database for storing embeddings and performing semantic search.",
+            "Postgres vector extension for storing embeddings and performing semantic search.",
           icon: "🧠",
         },
         {
@@ -163,12 +280,132 @@ export const projects: ProjectData[] = [
     },
   },
   {
+    id: "provenance",
+    title: "Provenance",
+    description:
+      "A full-stack agentic research assistant where a LangGraph agent plans sub-questions, searches the web via Tavily, and writes cited reports, streaming its live reasoning to the UI over SSE.",
+    image: provenanceOutside,
+    screenshots: [
+      { src: provenanceOutside, caption: "Landing page" },
+      { src: provenanceInside, caption: "In-app research dashboard" },
+    ],
+    tags: [
+      "Next.js",
+      "TypeScript",
+      "FastAPI",
+      "LangGraph",
+      "OpenAI",
+      "Agentic AI",
+    ],
+    liveUrl: "https://provenance-red.vercel.app",
+    codeUrl: "https://github.com/Hemant837/provenance",
+    caseStudy: {
+      overview:
+        "Provenance is a full-stack agentic research assistant. A LangGraph agent decomposes a research question into sub-questions, searches the web via Tavily, and synthesizes a cited report — streaming its live reasoning to the UI over Server-Sent Events so users can watch the agent think.",
+      challenge:
+        "Autonomous research agents are hard to trust and control: their reasoning is opaque, long-running tasks need to survive interruptions, and unbounded LLM calls can run up significant cost. The goal was an agent that is transparent, controllable, and safe to expose to real users.",
+      solution:
+        "I built a LangGraph agent that plans sub-questions, retrieves sources via Tavily, and writes cited reports, with its reasoning streamed live to a Next.js UI over SSE. I added a human-in-the-loop review gate with durable pause/resume via a Postgres checkpointer (approve/edit/reject), secured the API with Google OAuth, JWT, and rate limits, and integrated LangSmith for tracing and observability.",
+      features: [
+        {
+          title: "Agentic Planning",
+          description:
+            "A LangGraph agent decomposes a research question into sub-questions and orchestrates web search and synthesis.",
+        },
+        {
+          title: "Live Reasoning Stream",
+          description:
+            "Streams the agent's intermediate reasoning and progress to the UI in real time over Server-Sent Events.",
+        },
+        {
+          title: "Human-in-the-Loop Review",
+          description:
+            "A review gate with durable pause/resume via a Postgres checkpointer lets users approve, edit, or reject the agent's plan.",
+        },
+        {
+          title: "Cited Reports",
+          description:
+            "Generates research reports grounded in web sources retrieved via Tavily, with inline citations.",
+        },
+        {
+          title: "Cost & Access Controls",
+          description:
+            "Secured with Google OAuth, JWT, and rate limits to control LLM spend, with LangSmith tracing for observability.",
+        },
+      ],
+      technologies: [
+        {
+          name: "Next.js + TypeScript",
+          description:
+            "Frontend for the research interface and live agent reasoning stream.",
+          icon: "▲",
+        },
+        {
+          name: "LangGraph",
+          description:
+            "Orchestrates the agent's planning, tool use, and human-in-the-loop control flow.",
+          icon: "🕸️",
+        },
+        {
+          name: "FastAPI",
+          description:
+            "Async backend serving the agent, SSE streaming, and authenticated APIs.",
+          icon: "⚡",
+        },
+        {
+          name: "Tavily",
+          description:
+            "Web search API used by the agent to retrieve sources for reports.",
+          icon: "🔍",
+        },
+        {
+          name: "OpenAI",
+          description:
+            "LLM powering planning, reasoning, and report synthesis.",
+          icon: "🤖",
+        },
+        {
+          name: "Postgres Checkpointer",
+          description:
+            "Durable pause/resume state for the human-in-the-loop review gate.",
+          icon: "🗄️",
+        },
+      ],
+      process: [
+        {
+          title: "Agent Design",
+          description:
+            "Modeled the research workflow as a LangGraph state machine with planning, search, and synthesis nodes.",
+        },
+        {
+          title: "Streaming & UI",
+          description:
+            "Wired up SSE to stream intermediate reasoning to a Next.js interface for full transparency.",
+        },
+        {
+          title: "Human-in-the-Loop",
+          description:
+            "Added a durable review gate with a Postgres checkpointer for approve/edit/reject control.",
+        },
+        {
+          title: "Security & Observability",
+          description:
+            "Secured the API with Google OAuth, JWT, and rate limits, and added LangSmith tracing.",
+        },
+      ],
+      outcomes:
+        "Provenance demonstrates a production-ready agentic system that is transparent, controllable, and cost-aware — combining autonomous research with human oversight, durable state, and full observability.",
+      nextSteps:
+        "Planned improvements include multi-agent collaboration, configurable research depth, and export to richer report formats.",
+    },
+  },
+  {
     id: "mavlead",
     title: "Mavlead",
     description:
       "A responsive lead generation and marketing platform built with React, Tailwind CSS, and Express.js. Designed to highlight services in Salesforce, CRM, AI, and digital marketing with optimized performance and user-friendly navigation.",
     image: mavlead,
-    tags: ["React", "TypeScript", "Tailwind CSS", "Express.js", "SQL Server"],
+    tags: ["React", "TypeScript", "Tailwind CSS", "Express.js"],
     liveUrl: "https://mavlead.com/",
     codeUrl: "#",
     caseStudy: {
@@ -177,7 +414,7 @@ export const projects: ProjectData[] = [
       challenge:
         "The client needed a responsive, SEO-friendly website that could scale with their business and clearly communicate their expertise in enterprise solutions. They wanted a fast, secure, and professional web application capable of handling high-traffic marketing campaigns.",
       solution:
-        "I developed the platform with a React + TypeScript frontend for dynamic and reusable components, styled with Tailwind CSS for consistency and responsiveness. On the backend, Express.js and SQL Server were used for managing content, inquiries, and analytics. The site was optimized for fast load times, SEO, and lead capture workflows.",
+        "I developed the platform with a React + TypeScript frontend for dynamic and reusable components, styled with Tailwind CSS for consistency and responsiveness. On the backend, Express.js was used for managing content, inquiries, and form submissions. The site was optimized for fast load times, SEO, and lead capture workflows.",
       features: [
         {
           title: "Responsive Design",
@@ -228,12 +465,6 @@ export const projects: ProjectData[] = [
           icon: "⚡",
         },
         {
-          name: "SQL Server",
-          description:
-            "Database used for managing client inquiries, form submissions, and analytics.",
-          icon: "🗄️",
-        },
-        {
           name: "SEO Optimization",
           description:
             "Ensured search engine visibility with semantic HTML, metadata, and optimized load performance.",
@@ -258,7 +489,7 @@ export const projects: ProjectData[] = [
         {
           title: "Development",
           description:
-            "Built the frontend with React + TypeScript and backend APIs with Express.js and SQL Server, ensuring responsiveness and scalability.",
+            "Built the frontend with React + TypeScript and backend APIs with Express.js, ensuring responsiveness and scalability.",
           image:
             "https://placehold.co/600x400/e9ecef/5d63fd?text=Development&font=montserrat",
         },

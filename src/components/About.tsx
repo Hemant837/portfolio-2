@@ -30,15 +30,9 @@ const About = () => {
               workflows.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              I work across the full stack using React, TypeScript, and backend
-              APIs, and have built systems like Applicant Tracking Systems,
-              invoicing tools, and internal platforms used in real-world
-              workflows.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
-              Recently, I’ve been exploring Generative AI and building hands-on
-              projects, including a RAG-based document chat application using
-              Python, LangChain, Chroma, and FastAPI.
+              Recently, I’ve been building production Generative AI applications,
+              including RAG-based and agentic systems using Python, LangChain,
+              LangGraph, PG Vector, and FastAPI.
             </p>
             <p className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
               I enjoy solving real-world problems with clean, maintainable code
@@ -91,31 +85,11 @@ const About = () => {
                       />
                     </svg>
                     <div>
-                      <p className="font-medium">Bachelor of Technology</p>
+                      <p className="font-medium">
+                        B.Tech in Information Technology (77%)
+                      </p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         College of Engineering Roorkee, 2018-2022
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="h-5 w-5 text-indigo-600 mr-2 mt-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <div>
-                      <p className="font-medium">ST. Mark's Academy</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Intermediate, 2017-2018
                       </p>
                     </div>
                   </li>
@@ -145,7 +119,7 @@ const About = () => {
                     <div>
                       <p className="font-medium">Software Developer</p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        ST Global Tech, 2023-Present
+                        ST Global Tech, Dec 2023 - Present
                       </p>
                     </div>
                   </li>
@@ -169,7 +143,7 @@ const About = () => {
                         Freelance Frontend Developer
                       </p>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
-                        Freelance, 2023 - 2024
+                        Freelance, Jan 2023 - Dec 2023
                       </p>
                     </div>
                   </li>

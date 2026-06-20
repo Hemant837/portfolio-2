@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import CustomCursor from "./components/CustomCursor";
 import HomePage from "./pages/HomePage";
-import ProjectDetail from "./pages/ProjectDetail";
+import ProjectDetail from "./components/ProjectDetail";
 import ScrollToTopOnNavigate from "./components/ScrollToTopOnNavigate";
 
 import "./App.css";

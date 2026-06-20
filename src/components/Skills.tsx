@@ -10,6 +10,11 @@ const Skills = () => {
       level: 80,
     },
     {
+      name: "Next.js",
+      icon: "▲",
+      level: 75,
+    },
+    {
       name: "TypeScript",
       icon: "📘",
       level: 75,
@@ -41,7 +46,7 @@ const Skills = () => {
     },
     { name: "Python", icon: "🐍", level: 65 },
     {
-      name: "GenAI (RAG, LangChain, Chroma)",
+      name: "GenAI (RAG, LangChain, LangGraph)",
       icon: "🧠",
       level: 65,
     },
@@ -129,7 +134,13 @@ const Skills = () => {
               role="list"
               aria-label="Additional skills"
             >
-              {["MongoDB", "Firebase", "PostgreSQL", "Neon"].map(
+              {[
+                "OpenAI",
+                "LangGraph",
+                "Azure Blob Storage",
+                "PostgreSQL",
+                "Neon",
+              ].map(
                 (item, index) => (
                   <motion.span
                     key={index}

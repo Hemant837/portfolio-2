@@ -170,6 +170,30 @@ const ProjectDetail = () => {
               >
                 <p>{project.caseStudy.overview}</p>
               </motion.div>
+
+              {project.screenshots && project.screenshots.length > 0 && (
+                <motion.div
+                  className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8"
+                  variants={staggerContainer}
+                  initial="hidden"
+                  animate="visible"
+                >
+                  {project.screenshots.map((shot, index) => (
+                    <motion.figure key={index} variants={fadeInUp}>
+                      <img
+                        src={shot.src}
+                        alt={shot.caption || `${project.title} screenshot`}
+                        className="rounded-lg shadow-md w-full h-auto border border-gray-200 dark:border-gray-700"
+                      />
+                      {shot.caption && (
+                        <figcaption className="mt-3 text-center text-sm text-gray-600 dark:text-gray-400">
+                          {shot.caption}
+                        </figcaption>
+                      )}
+                    </motion.figure>
+                  ))}
+                </motion.div>
+              )}
             </MotionSection>
           )}
 
@@ -411,56 +435,62 @@ const ProjectDetail = () => {
           )}
 
           {/* Project links */}
-          <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
-            <motion.a
-              href={project.liveUrl}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg text-center font-medium flex items-center justify-center"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label={`Visit live demo of ${project.title}`}
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-              Visit Live Project
-            </motion.a>
-            <motion.a
-              href={project.codeUrl}
-              className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-lg text-center font-medium flex items-center justify-center"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label={`View source code of ${project.title}`}
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                />
-              </svg>
-              View Source Code
-            </motion.a>
-          </div>
+          {(project.liveUrl !== "#" || project.codeUrl !== "#") && (
+            <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
+              {project.liveUrl !== "#" && (
+                <motion.a
+                  href={project.liveUrl}
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg text-center font-medium flex items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={`Visit live demo of ${project.title}`}
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                  Visit Live Project
+                </motion.a>
+              )}
+              {project.codeUrl !== "#" && (
+                <motion.a
+                  href={project.codeUrl}
+                  className="bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white px-6 py-3 rounded-lg text-center font-medium flex items-center justify-center"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label={`View source code of ${project.title}`}
+                >
+                  <svg
+                    className="w-5 h-5 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                    />
+                  </svg>
+                  View Source Code
+                </motion.a>
+              )}
+            </div>
+          )}
         </div>
       </div>
 

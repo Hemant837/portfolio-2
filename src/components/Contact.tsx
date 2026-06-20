@@ -142,7 +142,7 @@ const Contact = () => {
                   </svg>
                   <div>
                     <p className="font-medium">Location</p>
-                    <p className="mt-1">UK, INDIA</p>
+                    <p className="mt-1">Noida, Uttar Pradesh</p>
                   </div>
                 </div>
               </div>
